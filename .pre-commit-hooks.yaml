@@ -1,0 +1,17 @@
+-   id: prettier
+    name: Prettier
+    description: This hook runs Prettier on JavaScript files
+    entry: prettier
+    language: node
+    files: '\.jsx?$'
+    exclude: 'node_modules'
+    types: [text]
+    args: ['--write']
+-   id: eslint
+    name: eslint
+    description: This hook runs Preeslintttier on JavaScript files
+    entry: eslint
+    language: node
+    files: '\.jsx?$'
+    exclude: 'node_modules'
+    types: [text]
