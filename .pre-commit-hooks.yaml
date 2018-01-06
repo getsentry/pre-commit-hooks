@@ -6,7 +6,7 @@
     files: '\.jsx?$'
     exclude: 'node_modules'
     types: [text]
-    args: ['--write', '--no-bracket-spacing', '--single-quote', '--print-width=90', '--jsx-bracket-same-line']
+    args: ['--write']
 -   id: eslint
     name: eslint
     description: This hook runs Preeslintttier on JavaScript files
