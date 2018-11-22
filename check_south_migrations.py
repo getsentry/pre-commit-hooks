@@ -89,6 +89,7 @@ def check_missing_migrations(app, django_conf=None):
             'Ungenerated/unmerged migrations found.',
             'You can run "sentry django schemamigration sentry --auto" to generate the missing migrations.',
         ]))
+        sys.stdin = open("/dev/tty", "r")
         confirm = raw_input('Are you sure you want to continue? [y/N] ')
         if confirm.lower() not in ['y', 'yes']:
             print('Aborting.')
