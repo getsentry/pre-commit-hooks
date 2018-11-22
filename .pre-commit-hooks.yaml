@@ -15,3 +15,9 @@
     files: '\.jsx?$'
     exclude: 'node_modules'
     types: [text]
+-   id: check-south-migrations
+    name: Check South Migrations
+    description: This hook checks that there are no ungenerated migrations
+    entry: python check_south_migrations/run.py
+    language: python
+    types: [python]
