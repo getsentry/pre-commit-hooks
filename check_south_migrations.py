@@ -80,22 +80,18 @@ def check_missing_migrations(app, django_conf=None):
         else:
             action = action_class(**params)
             forwards_actions.append(action)
-            print(action.console_line(), file=sys.stderr)   # noqa: B314
-            print(action.forwards_code(), file=sys.stderr)  # noqa: B314
-            print('', file=sys.stderr)                      # noqa: B314
+            print(action.console_line(), file=sys.stderr)
+            print(action.forwards_code(), file=sys.stderr)
+            print('', file=sys.stderr)
 
-    if forwards_actions != []:
+    if forwards_actions == []:
+        return True
+    else:
         print('\n'.join([
             'Ungenerated/unmerged migrations found.',
             'You can run "sentry django schemamigration sentry --auto" to generate the missing migrations.',
-        ]))
-        sys.stdin = open("/dev/tty", "r")
-        confirm = raw_input('Are you sure you want to continue? [y/N] ')
-        if confirm.lower() not in ['y', 'yes']:
-            print('Aborting.')
-            return False
-
-    return True
+        ]), file=sys.stderr)
+        return False
 
 
 def main():
