@@ -9,7 +9,7 @@
     args: ['--write']
 -   id: eslint
     name: eslint
-    description: This hook runs Preeslintttier on JavaScript files
+    description: This hook runs eslint on JavaScript files
     entry: eslint
     language: node
     files: '\.jsx?$'
